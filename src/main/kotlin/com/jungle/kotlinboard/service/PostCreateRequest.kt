@@ -1,0 +1,8 @@
+package com.jungle.kotlinboard.service
+
+// 자바의 record와 같은 개념 : data class
+data class PostCreateRequest(
+    val title: String,
+    val content: String,
+    val password : String
+)
