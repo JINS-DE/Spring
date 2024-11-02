@@ -11,7 +11,7 @@ import jakarta.validation.constraints.Pattern
 
 // 이렇게해야 프론트가편함 , dto 여러개 안만들어도됨
 data class MemberDtoRequest(
-    val id : Long?,
+    var id : Long?,
 
     @field:NotBlank
     @field:Pattern(
@@ -42,3 +42,24 @@ data class MemberDtoRequest(
 
     fun toEntity() : Member = Member(id, userName, password, nickName)
 }
+
+data class LoginDto(
+    @field:NotBlank
+    @JsonProperty("userName")
+    private val _userName : String?,
+
+    @field:NotBlank
+    @JsonProperty("password")
+    private val _password : String?,
+){
+    val userName : String
+    get() = _userName!!
+    val password : String
+    get() = _password!!
+}
+
+data class MemberDtoResponse(
+    val id : Long?,
+    val userName : String?,
+    val nickName : String?,
+)
