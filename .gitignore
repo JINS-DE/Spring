@@ -32,11 +32,10 @@ out/
 /dist/
 /nbdist/
 /.nb-gradle/
+src/main/resources/application.yaml
 
 ### VS Code ###
 .vscode/
 
 ### Kotlin ###
 .kotlin
-
-application.yaml
