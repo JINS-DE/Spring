@@ -9,9 +9,9 @@ spring:
   application:
   name: kotlin-board
   datasource:
-    url: test2
-    username: test2
-    password: test2
+    url: test3
+    username: test4
+    password: test4
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     defer-datasource-initialization: true

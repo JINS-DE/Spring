@@ -32,7 +32,7 @@ out/
 /dist/
 /nbdist/
 /.nb-gradle/
-src/main/resources/application.yaml
+/src/main/resources/application.yaml
 
 ### VS Code ###
 .vscode/
