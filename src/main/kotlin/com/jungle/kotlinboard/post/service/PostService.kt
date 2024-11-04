@@ -21,7 +21,6 @@ class PostsService(
             id = post.id,
             title = post.title,
             content = post.content,
-            password = post.password,
             createdDate = post.createdDate,
             createdBy = post.createdBy,
         )
@@ -29,21 +28,19 @@ class PostsService(
 
     // 게시판 목록 보여주기
     @Transactional(readOnly = true)
-    fun getPosts():List<Post> = postRepository.findAll()
+    fun getPosts():List<Post> = postRepository.findAllByOrderByCreatedDateDesc()
 
     fun insertPost(postCreateRequest: PostCreateRequest) : PostResponse {
         val post : Post =
             postRepository.save(
                 Post.of(
                     title = postCreateRequest.title,
-                    content = postCreateRequest.content,
-                    password= postCreateRequest.password))
+                    content = postCreateRequest.content,))
 
         return PostResponse(
             id= post.id,
             title=post.title,
             content=post.content,
-            password=post.password,
             createdDate = post.createdDate,
             createdBy = post.createdBy
         )
@@ -55,9 +52,6 @@ class PostsService(
     ) {
         val post = postRepository.findById(id).orElseThrow()
 
-        if(!post.checkPassword(postUpdateRequest.password)){
-            throw BadRequestException("비밀번호가 일치하지 않습니다.")
-        }
 
         if(!postUpdateRequest.title.isNullOrBlank()){
             post.updateTitle(postUpdateRequest.title)
@@ -66,12 +60,8 @@ class PostsService(
             post.updateContent(postUpdateRequest.content)
         }
     }
-    fun deletePost(id:Long, pw:String) {
+    fun deletePost(id:Long) {
         val post = postRepository.findById(id).orElseThrow()
-        if(post.checkPassword(pw)){
-            postRepository.delete(post)
-        } else{
-            throw IllegalArgumentException("패스워드가 일치하지 않습니다.")
-        }
+        postRepository.delete(post)
     }
 }

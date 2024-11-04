@@ -17,8 +17,7 @@ class Post(
     var title:String,
     @Column(nullable = false, length = 6553)
     var content:String,
-    @Column(nullable = false, updatable = false, length = 5)
-    val password:String,
+
     @Column(nullable = false, updatable = false)
     val createdDate:LocalDateTime,
     @Column(nullable = false, updatable = false)
@@ -29,8 +28,8 @@ class Post(
         fun of(
             title: String,
             content: String,
-            password: String):
-                Post = Post(title = title, content = content, password = password, createdDate = LocalDateTime.now(), createdBy = "test",)
+            ):
+                Post = Post(title = title, content = content, createdDate = LocalDateTime.now(), createdBy = "test",)
     }
 
     fun updateTitle(title:String){
@@ -40,5 +39,5 @@ class Post(
         this.content = content
     }
 
-    fun checkPassword(password: String) = this.password == password
+
 }

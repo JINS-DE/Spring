@@ -4,5 +4,4 @@ package com.jungle.kotlinboard.post.service
 data class PostCreateRequest(
     val title: String,
     val content: String,
-    val password : String
 )

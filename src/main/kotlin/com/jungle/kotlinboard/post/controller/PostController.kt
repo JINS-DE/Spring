@@ -6,8 +6,9 @@ import com.jungle.kotlinboard.post.service.PostResponse
 import com.jungle.kotlinboard.post.service.PostUpdateRequest
 import com.jungle.kotlinboard.post.service.PostsService
 import org.springframework.web.bind.annotation.*
+import org.springframework.web.servlet.ModelAndView
 
-@RestController //Controller를 RestFul하게 관리
+@RestController // Controller를 RestFul하게 관리
 @RequestMapping("/api/posts")
 class PostController (
     private val postService : PostsService
@@ -30,9 +31,8 @@ class PostController (
     @DeleteMapping("/{postId}")
     fun deletePost(
         @PathVariable postId: Long,
-        @RequestParam password : String,
     ){
-        postService.deletePost(postId,password)
+        postService.deletePost(postId)
     }
 
     @PostMapping()
