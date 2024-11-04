@@ -7,7 +7,7 @@ import java.time.LocalDateTime
 @Table(
     name = "posts"
 )
-// 코틀린은 ()안에 넣어주면 생성자가 자동으로 생성 , 자바는 {}안에넣음
+// 코틀린은 ()안에 넣어주면 생성자가 자동으로 생성 , 자바는 {}안에넣음!
 class Post(
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
