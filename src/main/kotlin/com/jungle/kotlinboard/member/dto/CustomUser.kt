@@ -1,4 +1,4 @@
-package com.jungle.kotlinboard.dto
+package com.jungle.kotlinboard.member.dto
 
 import org.springframework.security.core.GrantedAuthority
 import org.springframework.security.core.userdetails.User

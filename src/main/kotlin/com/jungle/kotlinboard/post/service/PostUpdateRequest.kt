@@ -1,4 +1,4 @@
-package com.jungle.kotlinboard.service
+package com.jungle.kotlinboard.post.service
 
 data class PostUpdateRequest(
     val title: String,

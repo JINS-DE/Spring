@@ -1,10 +1,8 @@
-package com.jungle.kotlinboard.domain
+package com.jungle.kotlinboard.member.domain
 
 import com.jungle.kotlinboard.common.status.ROLE
-import com.jungle.kotlinboard.dto.MemberDtoResponse
+import com.jungle.kotlinboard.member.dto.MemberDtoResponse
 import jakarta.persistence.*
-import java.time.LocalDate
-import java.time.format.DateTimeFormatter
 
 @Entity
 @Table(
@@ -56,6 +54,6 @@ class MemberRole(
 
     @ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(foreignKey = ForeignKey(name="fk_member_role_member_id"))
-    val member:Member,
+    val member: Member,
 )
 

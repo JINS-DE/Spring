@@ -1,4 +1,4 @@
-package com.jungle.kotlinboard.exception
+package com.jungle.kotlinboard.common.exception
 
 // 개발자가 잡을 수 있는 Exception = runtime 익셉션
 class InvalidInputException (

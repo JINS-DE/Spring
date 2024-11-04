@@ -1,10 +1,9 @@
-package com.jungle.kotlinboard.service
+package com.jungle.kotlinboard.member.service
 
-import com.jungle.kotlinboard.domain.Member
-import com.jungle.kotlinboard.domain.MemberRepository
-import com.jungle.kotlinboard.dto.CustomUser
+import com.jungle.kotlinboard.member.domain.Member
+import com.jungle.kotlinboard.member.domain.MemberRepository
+import com.jungle.kotlinboard.member.dto.CustomUser
 import org.springframework.security.core.authority.SimpleGrantedAuthority
-import org.springframework.security.core.userdetails.User
 import org.springframework.security.core.userdetails.UserDetails
 import org.springframework.security.core.userdetails.UserDetailsService
 import org.springframework.security.core.userdetails.UsernameNotFoundException

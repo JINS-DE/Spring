@@ -1,7 +1,7 @@
-package com.jungle.kotlinboard.service
+package com.jungle.kotlinboard.post.service
 
-import com.jungle.kotlinboard.domain.Post
-import com.jungle.kotlinboard.domain.PostRepository
+import com.jungle.kotlinboard.post.domain.Post
+import com.jungle.kotlinboard.post.domain.PostRepository
 import org.apache.coyote.BadRequestException
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
@@ -13,7 +13,7 @@ class PostsService(
 ) {
     // 게시글 하나 보여주기
     @Transactional(readOnly = true)
-    fun getPost(postId:Long) : PostResponse{
+    fun getPost(postId:Long) : PostResponse {
         // orElseThrow : null이면 오류를 반환하라는 함수
         val post=postRepository.findById(postId).orElseThrow()
 

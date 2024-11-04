@@ -1,10 +1,10 @@
-package com.jungle.kotlinboard.controller
+package com.jungle.kotlinboard.post.controller
 
-import com.jungle.kotlinboard.domain.Post
-import com.jungle.kotlinboard.service.PostCreateRequest
-import com.jungle.kotlinboard.service.PostResponse
-import com.jungle.kotlinboard.service.PostUpdateRequest
-import com.jungle.kotlinboard.service.PostsService
+import com.jungle.kotlinboard.post.domain.Post
+import com.jungle.kotlinboard.post.service.PostCreateRequest
+import com.jungle.kotlinboard.post.service.PostResponse
+import com.jungle.kotlinboard.post.service.PostUpdateRequest
+import com.jungle.kotlinboard.post.service.PostsService
 import org.springframework.web.bind.annotation.*
 
 @RestController //Controller를 RestFul하게 관리

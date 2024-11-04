@@ -7,7 +7,7 @@ import jakarta.validation.Payload
 import kotlin.reflect.KClass
 
 @Target(AnnotationTarget.FIELD)
-@Retention(AnnotationRetention.RUNTIME)
+@Retention(AnnotationRetention.RUNTIME) // 어노테이션 Scope(범위)지정, 시점 : Runtime
 @MustBeDocumented
 @Constraint(validatedBy = [])
 annotation class ValidEnum(

@@ -1,7 +1,10 @@
 package com.jungle.kotlinboard.service
 
-import com.jungle.kotlinboard.domain.Post
-import com.jungle.kotlinboard.domain.PostRepository
+import com.jungle.kotlinboard.post.domain.Post
+import com.jungle.kotlinboard.post.domain.PostRepository
+import com.jungle.kotlinboard.post.service.PostCreateRequest
+import com.jungle.kotlinboard.post.service.PostUpdateRequest
+import com.jungle.kotlinboard.post.service.PostsService
 import org.apache.coyote.BadRequestException
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.BeforeEach
@@ -26,7 +29,7 @@ class PostsServiceTest {
     @Test
     fun `게시글 생성 테스트 성공`(){
         // given : 어떤 조건으로 테스트할건지
-        val postCreateRequest:PostCreateRequest = PostCreateRequest(
+        val postCreateRequest: PostCreateRequest = PostCreateRequest(
             title = "test title",
             content = "test content",
             password = "1234"

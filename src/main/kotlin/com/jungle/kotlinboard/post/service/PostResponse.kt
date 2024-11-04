@@ -1,4 +1,4 @@
-package com.jungle.kotlinboard.service
+package com.jungle.kotlinboard.post.service
 
 import org.springframework.data.annotation.CreatedDate
 import java.time.LocalDateTime

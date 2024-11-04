@@ -1,4 +1,4 @@
-package com.jungle.kotlinboard.domain
+package com.jungle.kotlinboard.post.domain
 
 import org.springframework.data.jpa.repository.JpaRepository
 

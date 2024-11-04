@@ -26,6 +26,7 @@ class SecurityConfig (
             .authorizeHttpRequests {
                 it.requestMatchers("/api/member/signup", "/api/member/login").anonymous()
                     .requestMatchers("/api/member/info/**").hasRole("MEMBER")
+                    .requestMatchers("/api/posts/**").hasRole("MEMBER")
                     .anyRequest().permitAll()
             }.addFilterBefore(
                 JwtAuthenticationFilter(jwtTokenProvider),
